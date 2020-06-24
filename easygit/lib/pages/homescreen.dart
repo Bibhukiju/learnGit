@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import '../models/tileModel.dart';
 
-class HomeScreen extends StatelessWidget {
-  final List titles = [
-    "introduction to git",
-    "Create",
-    "Local Changes",
-    " commit History",
-    "Branches and tags",
-    "Update and publish",
-    "Merge and Rebase",
-    "Undo",
-    "Stash",
-    "Workflow",
-    "Git commit messages"
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<LTiles> lCards = [
+    LTiles(title: "Introduction to git", params: "Intro"),
+    LTiles(title: "Create", params: "create"),
+    LTiles(title: "Local Changes", params: "LoChanges"),
+    LTiles(title: "Commit History", params: "CHistory"),
+    LTiles(title: "Branches and tags", params: "BandT"),
+    LTiles(title: "Merge and Rebase", params: "MandR"),
+    LTiles(title: "Undo", params: "undo"),
+    LTiles(title: "Stash", params: "stash"),
+    LTiles(title: "WorkFlow", params: "Workflow"),
+    LTiles(title: "Git Commit message", params: "GCM")
   ];
   @override
   Widget build(BuildContext context) {
@@ -24,16 +29,19 @@ class HomeScreen extends StatelessWidget {
         leading: Icon(Icons.code),
       ),
       body: Container(
-        margin: EdgeInsets.only(top:10),
+        margin: EdgeInsets.only(top: 10),
         child: ListView.builder(
-          itemCount: titles.length,
+          itemCount: lCards.length,
           itemBuilder: (BuildContext context, int index) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Card(
-              shape:
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: buildTiles(title: titles.elementAt(index)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: Hero(
+                tag: "${lCards.elementAt(index).title}",
+                child: ListTile(
+                  title: buildTiles(title: lCards.elementAt(index).title),
+                ),
               ),
             ),
           ),
