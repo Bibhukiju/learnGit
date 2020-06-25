@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../models/tileModel.dart';
+import '../pages/details.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -40,6 +42,13 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Hero(
                 tag: "${lCards.elementAt(index).title}",
                 child: ListTile(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => Details(
+                              index: index,
+                              title: lCards.elementAt(index).title,
+                            )));
+                  },
                   title: buildTiles(title: lCards.elementAt(index).title),
                 ),
               ),
