@@ -70,6 +70,14 @@ List<List<CnDesc>> listPages = [
   ],
   [
     CnDesc(
-        command: "\$ git log", desc: "Show all commits, starting with newest ")
+        command: "\$ git log",
+        desc:
+            "Show all commits, starting with newest \n\nA git log is a running records of commits. A full log has the following pieces.A commit hash (SHA1 40 character checksum of the commit contents).Because it is generated based on the commit contents it is unique.Commit Author metadata: the name and email address of the author of the commit//n//nShows the commit logs //n//nThe command taes the options applicable to the git rev -list command to control what is shown and how and options applicable to the git diff-* commands to control how thw changes each commit introduces are shown"),
+    CnDesc(
+        command: "\$git log -p <File>",
+        desc: "Show changes over time for a particular file"),
+    CnDesc(
+        command: "\$ git log --oneline --graph --decorate",
+        desc: "show alll commit history with graph"),
   ]
 ];
