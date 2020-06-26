@@ -7,9 +7,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "EZ git",
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.orange,
+        primaryColor: Colors.grey[800],
       ),
       home: HomeScreen(),
     );

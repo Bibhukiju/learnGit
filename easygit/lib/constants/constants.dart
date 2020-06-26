@@ -96,8 +96,46 @@ List<List<CnDesc>> listPages = [
         command: "\$ git checkout -b <new branch name>",
         desc: "Create and switch new branch as per the current branch "),
     CnDesc(
-        command: "\$ git checkout -b destinationbranchname sourcebranchname ",
+        command: "\$ git checkout -b dest.ranchname sourcebranchname ",
         desc:
-            "Create or check out new branch from other branch \n\nlet's say you are in 'develop' branch and you want to create new branch from another branch wthout switchinh branch so you can create new branch from other branch from develop branch \n Example: \n")
+            "Create or check out new branch from other branch \n\nlet's say you are in 'develop' branch and you want to create new branch from another branch wthout switchinh branch so you can create new branch from other branch from develop branch \n Example: \n\$git branch \ndevelop* feature/login feature/register \n\n current branch is 'develop'\n Now ou want to create branch from 'feature/login'. Here  is you can fire it \n\n\$ git checkout -b feature/login feature/social-login\n The base branch of d=feature/social-login is feature/login "),
+    CnDesc(
+        command: "\$ git checkout --track <remote/branch>",
+        desc:
+            "Create a new tracking branch based on a remote branch\n\It willonly create 'abranch', not a branch with a different name."),
+    CnDesc(
+        command: "\$ git branch -m newBranchname",
+        desc: "Rename current branch with newbranch name"),
+    CnDesc(
+        command: "\$ branch -m old-name new-name",
+        desc:
+            "If you are in a different branch, You can renaming other branch from this command\n\nMove/rename a branch and the corresponding reflog"),
+    CnDesc(
+        command: "\$ git branch -d <branchname> ",
+        desc:
+            "Delete local branch \n\n Delete a branch. the branch must be fully merged in its upstream branch, or in HEAD if no upstream was set with --track or --set-upstream-to."),
+    CnDesc(command: "\$ git tag Yourtagversion", desc: "Create new tag"),
+    CnDesc(
+        command: "\$ git tag -a YourTagversion -m 'tag message'",
+        desc:
+            "Create tag with message.\n\nCreating an annotated tag in Git is simple. The easiest way is to specify -a when you run the tag command. The -m specifies a tagging message, which is stored with the tag. If you don't specify a message for an annotated tag, Git launches your editor so you can type it in"),
+    CnDesc(
+        command: "\$ git show YourtagVersion",
+        desc:
+            "Show tag command with commits\n\n Shows one or more objects (blobs,trees, tags and commits)\n\nThis manual page describe only the most frequently used options."),
+    CnDesc(
+        command: "\$ git tag | git tag -l | git tag --list ",
+        desc: "Listing the available tags in git"),
+    CnDesc(
+        command: "\$ git tag -l 'Tag pattern '",
+        desc:
+            "You can also search for tags that match a particular pattern \n\nThe Git source repo, for instance, contains more than 500 tags. if you are only intrested in looking at the 1.8.5 series \, you can run this : \$ git tag -l 'v1.8.5'"),
+    CnDesc(
+        command: "\$ git checkout YourtagVersion ",
+        desc:
+            "Checkout specific tag\n\nYou can directly checkout your tag version from firing this command"),
+    CnDesc(
+        command: "\$ git checkout -b Nebranch yourtagversion ",
+        desc: "Checkot ne branch from specific version tag"),
   ],
 ];

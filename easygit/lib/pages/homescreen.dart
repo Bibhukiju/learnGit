@@ -29,19 +29,34 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         title: Text("Easy git"),
         leading: Icon(Icons.code),
+        centerTitle: true,
+        backgroundColor: Colors.black12,
       ),
-      body: Container(
-        margin: EdgeInsets.only(top: 10),
-        child: ListView.builder(
-          itemCount: lCards.length,
-          itemBuilder: (BuildContext context, int index) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+      body: ListView.builder(
+        itemCount: lCards.length,
+        itemBuilder: (BuildContext context, int index) => Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(-5, -5),
+                      blurRadius: 2,
+                      color: Colors.grey[800]),
+                  BoxShadow(
+                      offset: Offset(5, 5),
+                      blurRadius: 2,
+                      color: Colors.grey.shade700)
+                ],
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.black54,
+              ),
               child: Hero(
                 tag: "${lCards.elementAt(index).title}",
-                child: ListTile(
+                child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => Details(
@@ -49,11 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               title: lCards.elementAt(index).title,
                             )));
                   },
-                  title: buildTiles(title: lCards.elementAt(index).title),
+                  child: Container(
+                    child: buildTiles(title: lCards.elementAt(index).title),
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );
