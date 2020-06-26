@@ -68,6 +68,7 @@ List<List<CnDesc>> listPages = [
         desc:
             "The --no-edit flag will allow you to make the ammendment to your commit without changing its commit message \n\n Don't ammend publish commits"),
   ],
+  //commit history
   [
     CnDesc(
         command: "\$ git log",
@@ -79,5 +80,24 @@ List<List<CnDesc>> listPages = [
     CnDesc(
         command: "\$ git log --oneline --graph --decorate",
         desc: "show alll commit history with graph"),
-  ]
+  ],
+  //branches and tags
+  [
+    CnDesc(
+        command: "\$ git branch ",
+        desc:
+            "Show current working branch\n\n git branch. this documnent is in-depth review of the git branch command and discusiion of the overall Git branching model.Branching is a feature availablein most modern version control system Instead of copying files from directory to directory,Git stores a branch as a reference to commit "),
+    CnDesc(command: "\$ git branch -av", desc: "List all existing branches"),
+    CnDesc(
+        command: "\$ git checkout <branch name> ",
+        desc:
+            "Switch Head branch or change branch \n\n Git checkout. This page is an examination of the git checkout command .. the git checkout command operates upon three distinct entities:files, commits , branches.In addition to the defination of \"checkout\" the phrase 'checking out' is commonly used to imply the act of executing the git checkout command"),
+    CnDesc(
+        command: "\$ git checkout -b <new branch name>",
+        desc: "Create and switch new branch as per the current branch "),
+    CnDesc(
+        command: "\$ git checkout -b destinationbranchname sourcebranchname ",
+        desc:
+            "Create or check out new branch from other branch \n\nlet's say you are in 'develop' branch and you want to create new branch from another branch wthout switchinh branch so you can create new branch from other branch from develop branch \n Example: \n")
+  ],
 ];
