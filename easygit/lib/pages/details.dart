@@ -21,33 +21,38 @@ class _DetailsState extends State<Details> {
         padding: const EdgeInsets.all(14.0),
         child: ListView.builder(
           itemCount: a.length,
-          itemBuilder: (BuildContext context, int index) => Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      a.elementAt(index).command,
-                      style: TextStyle(fontSize: 26),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text.rich(
-                      TextSpan(text: a.elementAt(index).desc),
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 20,
+          itemBuilder: (BuildContext context, int index) => Column(
+            children: <Widget>[
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Text(
+                        a.elementAt(index).command,
+                        style: TextStyle(fontSize: 20),
                       ),
-                    )
-                  ],
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text.rich(
+                        TextSpan(text: a.elementAt(index).desc),
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
+              SizedBox(
+                height: 10,
+              ),
+            ],
           ),
         ),
       ),
