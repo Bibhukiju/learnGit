@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     LTiles(title: "Local Changes", params: "LoChanges"),
     LTiles(title: "Commit History", params: "CHistory"),
     LTiles(title: "Branches and tags", params: "BandT"),
+    LTiles(title: "Update and Publish"),
     LTiles(title: "Merge and Rebase", params: "MandR"),
     LTiles(title: "Undo", params: "undo"),
     LTiles(title: "Stash", params: "stash"),
