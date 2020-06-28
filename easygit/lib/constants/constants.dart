@@ -138,4 +138,46 @@ List<List<CnDesc>> listPages = [
         command: "\$ git checkout -b Nebranch yourtagversion ",
         desc: "Checkot ne branch from specific version tag"),
   ],
+  //update and publish
+  [
+    CnDesc(
+        command: "\$ git remote -v ",
+        desc:
+            "List all currently configured remotes.\n\n git syncing. the git remote command is one piece of the broader system which is responsible for syncing  changes. Records registered through the git remote command are used in conjuction with the git fetch, git push, and git pull commands "),
+    CnDesc(
+        command: "\$ git remote sho <remote>",
+        desc: "show informations about remotes"),
+    CnDesc(
+        command: "\$ git remote add <shortname> <url>",
+        desc: "Add a new repository name <remote>"),
+    CnDesc(
+        command: "\$git fetch <remote>",
+        desc:
+            "Donload all changes from <remote> but don't integrate it to HEAD"),
+    CnDesc(command: "\$ git fetch all", desc: "fetch all remotes into local"),
+    CnDesc(
+        command: "\$ git pull <remote> <branch> | git pull",
+        desc: "Download changes and directly merge into the HEAD "),
+    CnDesc(
+        command: "\$git push",
+        desc:
+            "Publish local commits to remote\n\n The git push command is used to upload local repository.Pushing is how ou transfer commits from your local repository to a remote repo.Remote repo areconfigured using the git remote  command.Pushing the the potential to overwrite changes\n\n⚠ Caution should be taken while pushing "),
+    CnDesc(
+        command: "\$ git push <remote/branch>",
+        desc: "Publish local changes to remote"),
+    CnDesc(
+        command: "\$ git push origin: oldname new-name",
+        desc:
+            "Delete the old name remote branch and push the new branch to the local branch"),
+    CnDesc(
+        command: "\$ git push origin -u newname",
+        desc:
+            "Reset the upstream branch for the newname local branch. Sitch to the branch and then "),
+    CnDesc(
+        command: "\$ git branch -dr <remote/branch>",
+        desc: "Delete the branch on the remote"),
+    CnDesc(
+        command: "\$ git push origin Yourtagversion ",
+        desc: "Push tag to remote after creating it"),
+  ],
 ];
